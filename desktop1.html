@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<meta charset="UTF-8">
+    
+<head>
+    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styledesafio.css">
+    <title>Encriptador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+</head>
+
+
+
+<body>
+    <main>
+    <header>
+        <div class="logo">
+        <img src="imagenes/Vector.jpg" alt="Logo Alura">
+        </div>
+    </header>
+    <div class="contenedor">
+        <div class="contenedor1">
+            <div >
+        
+                <input type="text" id="texto" value="Ingrese el texto aqui">
+            
+            </div>
+            <section>
+                <div class="minusculascontenedor">
+                    <img src="imagenes/admiracion.jpeg.png" class="imgminusculas">
+                    <p class="minusculas"> Sólo letras minúsculas y sin acentos</p>
+                </div>
+
+                <div class="botonesContenedor">
+                    <div> <input type="button" value="Encriptar" class="botonencriptar" onclick="Encriptar()"> </div>
+                    <div><input type="button" value="Desencriptar" class="botondesencriptar" onclick="Desencriptar()"></div>
+                </div>
+                
+            </section>
+        </div>
+
+        <div class="contenedor2">    
+            <section>
+                <div class="rectangulo">
+                    <div><input type="text" value=" "  class="textolorem"></div>
+                    <div ><input type="button" value="Copiar" class="botoncopiar" onclick="Copiar()"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </main>
+    <footer>
+        
+        <p class="copyright">&copy Creado por Patricia Guaricela</p>
+        </footer>
+
+<script>
+
+
+function Encriptar(){
+ var mensaje=document.getElementById("texto").value;
+
+ console.log(mensaje);
+ var frase=mensaje.replace(/e/img,"enter")
+    .replace(/o/igm,"ober")
+    .replace(/i/igm,"imes")
+    .replace(/a/igm,"ai")
+    .replace(/u/igm,"ufat");;
+    console.log(frase);
+    document.querySelector(".textolorem").value = frase;
+   
+    
+}
+
+function Desencriptar(){
+ var mensaje=document.getElementById("texto").value;
+
+ console.log(mensaje);
+ var frase=mensaje.replace(/enter/img,"e")
+    .replace(/ober/igm,"o")
+    .replace(/imes/igm,"i")
+    .replace(/ai/igm,"a")
+    .replace(/ufat/igm,"u");;
+    console.log(frase);
+    document.querySelector(".textolorem").value = frase;
+      
+}
+/*function Copiar(){
+    
+   var mensajeEncriptado = document.getElementsByClassName("textolorem")[0].value;
+   console.log(mensajeEncriptado);
+   document.getElementById("texto").value=mensajeEncriptado;
+}*/
+
+function Copiar() {
+  let copyText = document.querySelector(".textolorem");
+  copyText.select();
+  document.execCommand("copy");
+ alert("Pegue el texto copiado en el área de texto de la izquierda (CTRL+V)");
+
+  
+ /* alert("Pegue el texto copiado en el area de texto de la izquierda CTRL+V");*/
+
+}
+
+</script>
+
+
+
+       
+</body>
+
+</html>
+
+
